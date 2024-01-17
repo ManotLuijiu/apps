@@ -19,6 +19,8 @@ interface ConfigurationField {
 
 function Configuration() {
   const { appBridgeState } = useAppBridge();
+
+  console.log("appBridgeState", appBridgeState);
   const { notifyError, notifySuccess } = useDashboardNotification();
   const [configuration, setConfiguration] = useState<ConfigurationField[]>();
 
