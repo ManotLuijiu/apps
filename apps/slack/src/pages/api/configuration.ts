@@ -7,7 +7,14 @@ import { createGraphQLClient } from "@saleor/apps-shared";
 import { WebhookActivityTogglerService } from "../../lib/WebhookActivityToggler.service";
 import { isValidUrl } from "../../lib/is-valid-url";
 
-const WEBHOOK_URL = "WEBHOOK_URL";
+/*
+ * const WEBHOOK_URL = "WEBHOOK_URL";
+ * const WEBHOOK_URL = process.env.WEBHOOK_URL
+ */
+const WEBHOOK_URL =
+  "https://hooks.slack.com/services/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";
+
+console.log(WEBHOOK_URL);
 
 interface PostRequestBody {
   data: { key: string; value: string }[];
