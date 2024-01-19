@@ -19,8 +19,8 @@ switch (process.env.APL) {
   case "upstash":
     // Require `UPSTASH_URL` and `UPSTASH_TOKEN` environment variables
     apl = new UpstashAPL({
-      restToken: process.env.UPSTASH_URL as string,
-      restURL: process.env.UPSTASH_TOKEN as string,
+      restToken: process.env.UPSTASH_TOKEN as string,
+      restURL: process.env.UPSTASH_URL as string,
     });
     break;
   case "saleor-cloud": {
