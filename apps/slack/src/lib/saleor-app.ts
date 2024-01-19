@@ -11,6 +11,8 @@ import { SaleorApp } from "@saleor/app-sdk/saleor-app";
 
 let apl: APL;
 
+console.log("process.env.APL", process.env.APL);
+
 switch (process.env.APL) {
   case "upstash":
     // Require `UPSTASH_URL` and `UPSTASH_TOKEN` environment variables

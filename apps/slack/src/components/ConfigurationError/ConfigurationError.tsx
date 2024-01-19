@@ -6,6 +6,7 @@ export function ConfigurationError() {
       <ul>
         <li>Internet connection has been lost</li>
         <li>Application installation process is still in progress.</li>
+        <li>โปรดตรวจสอบ APL configuration</li>
         <li>
           Application is misconfigured. If you would like to know more how auth configuration is
           kept,{" "}

@@ -20,7 +20,9 @@ interface ConfigurationField {
 function Configuration() {
   const { appBridgeState } = useAppBridge();
 
-  console.log("appBridgeState", appBridgeState);
+  console.log("appBridgeState", appBridgeState?.saleorApiUrl!);
+  console.log("appBridgeState", appBridgeState?.token!);
+
   const { notifyError, notifySuccess } = useDashboardNotification();
   const [configuration, setConfiguration] = useState<ConfigurationField[]>();
 
@@ -47,6 +49,8 @@ function Configuration() {
       body: JSON.stringify({ data: configuration }),
     })
       .then(async (response) => {
+        console.log("response", response);
+
         if (response.ok) {
           notifySuccess("Success", "Configuration updated successfully");
 

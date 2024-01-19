@@ -18,6 +18,10 @@ export const useAppApi = <D>({ url, options, skip }: UseFetchProps) => {
   const [error, setError] = useState<unknown>();
   const [loading, setLoading] = useState(false);
 
+  console.log("useAppApi_hooks_data", data);
+  console.log("useAppApi_hooks_error", error);
+  console.log("useAppApi_hooks_loading", loading);
+
   const fetchOptions: RequestInit = {
     ...options,
     headers: [

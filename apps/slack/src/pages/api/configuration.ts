@@ -10,7 +10,7 @@ import { isValidUrl } from "../../lib/is-valid-url";
 const WEBHOOK_URL = "WEBHOOK_URL";
 // const WEBHOOK_URL = process.env.WEBHOOK_URL as string;
 
-console.log(WEBHOOK_URL);
+console.log("WEBHOOK_URL", WEBHOOK_URL);
 
 interface PostRequestBody {
   data: { key: string; value: string }[];
