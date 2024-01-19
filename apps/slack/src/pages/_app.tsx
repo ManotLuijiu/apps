@@ -5,10 +5,26 @@ import "@saleor/macaw-ui/style";
 import { AppProps } from "next/app";
 import { ThemeSynchronizer } from "../hooks/theme-synchronizer";
 
+const appBridge = new AppBridge({
+  saleorApiUrl: "https://saleor-api.iesthete.com/graphql/",
+});
+
+const { token, saleorApiUrl, ready, id } = appBridge.getState();
+
+console.log("token", token);
+console.log("saleorApiUrl", saleorApiUrl);
+console.log("ready", ready);
+console.log("id", id);
+
 /**
  * Ensure instance is a singleton.
  */
-export const appBridgeInstance = typeof window !== "undefined" ? new AppBridge() : undefined;
+export const appBridgeInstance =
+  typeof window !== "undefined"
+    ? new AppBridge({
+        saleorApiUrl: "https://saleor-api.iesthete.com/graphql/",
+      })
+    : undefined;
 
 function SaleorApp({ Component, pageProps }: AppProps) {
   // @ts-ignore todo refactor
