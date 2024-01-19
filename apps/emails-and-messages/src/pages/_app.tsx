@@ -15,7 +15,12 @@ import { trpcClient } from "../modules/trpc/trpc-client";
  * Ensure instance is a singleton.
  * TODO: This is React 18 issue, consider hiding this workaround inside app-sdk
  */
-export const appBridgeInstance = typeof window !== "undefined" ? new AppBridge() : undefined;
+export const appBridgeInstance =
+  typeof window !== "undefined"
+    ? new AppBridge({
+        saleorApiUrl: "https://saleor-api.iesthete.com/graphql/",
+      })
+    : undefined;
 
 function NextApp({ Component, pageProps }: AppProps) {
   return (
