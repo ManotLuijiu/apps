@@ -12,7 +12,7 @@ import { SaleorApp } from "@saleor/app-sdk/saleor-app";
 let apl: APL;
 
 console.log("process.env.APL", process.env.APL);
-console.log("process.env.UPSTASH_URL", process.env.UPSTASH_TOKEN);
+console.log("process.env.UPSTASH_URL", process.env.UPSTASH_URL);
 console.log("process.env.UPSTASH_TOKEN", process.env.UPSTASH_TOKEN);
 
 switch (process.env.APL) {
