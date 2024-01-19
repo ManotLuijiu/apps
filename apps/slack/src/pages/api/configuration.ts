@@ -7,8 +7,8 @@ import { createGraphQLClient } from "@saleor/apps-shared";
 import { WebhookActivityTogglerService } from "../../lib/WebhookActivityToggler.service";
 import { isValidUrl } from "../../lib/is-valid-url";
 
-// const WEBHOOK_URL = "WEBHOOK_URL";
-const WEBHOOK_URL = process.env.WEBHOOK_URL as string;
+const WEBHOOK_URL = "WEBHOOK_URL";
+// const WEBHOOK_URL = process.env.WEBHOOK_URL as string;
 
 console.log(WEBHOOK_URL);
 
