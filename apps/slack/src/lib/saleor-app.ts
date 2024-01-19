@@ -21,9 +21,12 @@ switch (process.env.APL) {
     apl = new UpstashAPL({
       // restToken: process.env.UPSTASH_TOKEN as string,
       restToken:
-        "AYtlASQgZWU5Yzk3ZmQtOGE5My00ZDU3LTkxZGItNmI1MTIzNDJiNWFhYmFlYmYzYWEzMGJmNGQyOGEwZDdmZDlkZWIzOGI1ZmM=",
-      // restURL: process.env.UPSTASH_URL as string,
-      restURL: "https://fancy-gopher-35685.upstash.io",
+        "AbqaASQgY2U4ODA4YzAtMzc5Yi00MmY0LWJlNTktMGJiZTRjZTg2YWU0Y2Q3YjJjMTc2OTM2NDEwMmFmZjA2NjdiMjQzMGJmMjk=",
+      /*
+       * restURL: process.env.UPSTASH_URL as string,
+       * restURL: "https://fancy-gopher-35685.upstash.io",
+       */
+      restURL: "https://communal-gator-47770.kv.vercel-storage.com",
     });
     break;
   case "saleor-cloud": {
