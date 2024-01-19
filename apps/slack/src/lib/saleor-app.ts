@@ -45,6 +45,8 @@ switch (process.env.APL) {
 // Use placeholder value for the development
 export const settingsManagerSecretKey = process.env.SECRET_KEY || "CHANGE_ME";
 
+console.log("process.env.SECRET_KEY", process.env.SECRET_KEY);
+
 /**
  * Prohibit installation from Saleors other than specified by the regex.
  * Regex source is ENV so if ENV is not set, all installations will be allowed.
