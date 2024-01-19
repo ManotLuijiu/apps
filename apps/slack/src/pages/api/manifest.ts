@@ -7,7 +7,11 @@ import { orderCreatedWebhook } from "./webhooks/order-created";
 const handler = createManifestHandler({
   async manifestFactory({ appBaseUrl }) {
     const iframeBaseUrl = process.env.APP_IFRAME_BASE_URL ?? appBaseUrl;
+
+    console.log("iframeBaseUrl", iframeBaseUrl);
     const apiBaseURL = process.env.APP_API_BASE_URL ?? appBaseUrl;
+
+    console.log("apiBaseURL", apiBaseURL);
 
     const manifest: AppManifest = {
       about:
