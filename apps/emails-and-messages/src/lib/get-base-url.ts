@@ -1,6 +1,8 @@
 export const getBaseUrl = (headers: { [name: string]: string | string[] | undefined }): string => {
   const { host, "x-forwarded-proto": xForwardedProto = "http" } = headers;
 
+  console.log("headers_host", host);
+
   const xForwardedProtos = Array.isArray(xForwardedProto)
     ? xForwardedProto.join(",")
     : xForwardedProto;

@@ -25,10 +25,14 @@ export const handler = async (
     authData: { token, saleorApiUrl, appId },
   } = ctx;
 
+  console.log("ctx", ctx);
+
   const client = createGraphQLClient({
     saleorApiUrl,
     token,
   });
+
+  console.log("graphql_client", client);
 
   const settings = createSettingsManager(client, appId);
 
