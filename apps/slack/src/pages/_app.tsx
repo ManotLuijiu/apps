@@ -5,16 +5,20 @@ import "@saleor/macaw-ui/style";
 import { AppProps } from "next/app";
 import { ThemeSynchronizer } from "../hooks/theme-synchronizer";
 
-const appBridge = new AppBridge({
-  saleorApiUrl: "https://saleor-api.iesthete.com/graphql/",
-});
+/*
+ * const appBridge = new AppBridge({
+ *   saleorApiUrl: "https://saleor-api.iesthete.com/graphql/",
+ * });
+ */
 
-const { token, saleorApiUrl, ready, id } = appBridge.getState();
+// const { token, saleorApiUrl, ready, id } = appBridge.getState();
 
-console.log("token", token);
-console.log("saleorApiUrl", saleorApiUrl);
-console.log("ready", ready);
-console.log("id", id);
+/*
+ * console.log("token", token);
+ * console.log("saleorApiUrl", saleorApiUrl);
+ * console.log("ready", ready);
+ * console.log("id", id);
+ */
 
 /**
  * Ensure instance is a singleton.
