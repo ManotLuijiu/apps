@@ -12,11 +12,16 @@ import { SaleorApp } from "@saleor/app-sdk/saleor-app";
 let apl: APL;
 
 console.log("process.env.APL", process.env.APL);
+console.log("process.env.UPSTASH_URL", process.env.UPSTASH_TOKEN);
+console.log("process.env.UPSTASH_TOKEN", process.env.UPSTASH_TOKEN);
 
 switch (process.env.APL) {
   case "upstash":
     // Require `UPSTASH_URL` and `UPSTASH_TOKEN` environment variables
-    apl = new UpstashAPL();
+    apl = new UpstashAPL({
+      restToken: process.env.UPSTASH_URL as string,
+      restURL: process.env.UPSTASH_TOKEN as string,
+    });
     break;
   case "saleor-cloud": {
     if (!process.env.REST_APL_ENDPOINT || !process.env.REST_APL_TOKEN) {
