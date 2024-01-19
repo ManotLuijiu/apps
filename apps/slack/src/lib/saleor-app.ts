@@ -19,8 +19,11 @@ switch (process.env.APL) {
   case "upstash":
     // Require `UPSTASH_URL` and `UPSTASH_TOKEN` environment variables
     apl = new UpstashAPL({
-      restToken: process.env.UPSTASH_TOKEN as string,
-      restURL: process.env.UPSTASH_URL as string,
+      // restToken: process.env.UPSTASH_TOKEN as string,
+      restToken:
+        "AYtlASQgZWU5Yzk3ZmQtOGE5My00ZDU3LTkxZGItNmI1MTIzNDJiNWFhYmFlYmYzYWEzMGJmNGQyOGEwZDdmZDlkZWIzOGI1ZmM=",
+      // restURL: process.env.UPSTASH_URL as string,
+      restURL: "https://fancy-gopher-35685.upstash.io",
     });
     break;
   case "saleor-cloud": {
