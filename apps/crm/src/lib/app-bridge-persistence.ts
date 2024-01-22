@@ -36,7 +36,7 @@ export const AppBridgePersistence = {
 export const AppBridgeStorageSetter = () => {
   const { appBridgeState } = useAppBridge();
 
-  console.log("appBridgeState", appBridgeState);
+  console.log("appBridgeState_lib_app-bridge-persistence", appBridgeState);
 
   useEffect(() => {
     if (appBridgeState?.saleorApiUrl && appBridgeState?.token) {
@@ -52,6 +52,8 @@ export const AppBridgeStorageSetter = () => {
 
 export const useAppBridgePersistence = () => {
   const value = useRef(AppBridgePersistence.get());
+
+  console.log("value", value);
 
   return value.current;
 };
