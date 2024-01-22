@@ -24,6 +24,7 @@ export let appBridgeInstance: AppBridge | undefined;
 if (typeof window !== "undefined" && !appBridgeInstance) {
   appBridgeInstance = new AppBridge();
   console.log("_app-appBridgeInstance", appBridgeInstance);
+  console.log("typeof window", typeof window);
 }
 
 /**
