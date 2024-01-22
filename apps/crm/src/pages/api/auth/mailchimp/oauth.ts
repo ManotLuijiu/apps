@@ -8,6 +8,9 @@ import { createLogger } from "@saleor/apps-shared";
 export const getBaseUrl = (headers: { [name: string]: string | string[] | undefined }): string => {
   const { host, "x-forwarded-proto": protocol = "http" } = headers;
 
+  console.log("oauth_protocol", protocol);
+  console.log("oauth_host", host);
+
   return `${protocol}://${host}`;
 };
 
@@ -19,6 +22,8 @@ const handler: NextApiHandler = async (req, res) => {
   }
 
   const appBridgeContext = req.body;
+
+  console.log("oauth_appBridgeContext", appBridgeContext);
 
   if (!appBridgeContext.token || !appBridgeContext.saleorApiUrl) {
     return res.status(400).send("Request must container token & saleorApiUrl body params");
@@ -40,6 +45,8 @@ const handler: NextApiHandler = async (req, res) => {
   });
 
   const redirectUri = `${getBaseUrl(req.headers)}/api/auth/mailchimp/callback`;
+
+  console.log("oauth_redirectUri", redirectUri);
 
   logger.debug({ redirectUri }, "Resolved redirect uri");
 

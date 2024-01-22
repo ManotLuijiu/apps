@@ -11,7 +11,7 @@ export const getBaseUrl = (headers: { [name: string]: string | string[] | undefi
 const handler: NextApiHandler = async (req, res) => {
   const baseUrl = getBaseUrl(req.headers);
 
-  console.log("baseUrl", baseUrl);
+  console.log("callback_baseUrl", baseUrl);
 
   const logger = createLogger({ url: req.url });
 

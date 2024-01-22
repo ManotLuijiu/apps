@@ -7,6 +7,8 @@ import { useAppBridgePersistence } from "../../../../lib/app-bridge-persistence"
 export const MailchimpAuthSection = () => {
   const appBridgeContext = useAppBridgePersistence();
 
+  console.log("mailchimp-auth-section.tsx_appBridgeContext", appBridgeContext);
+
   if (!appBridgeContext) {
     throw new Error("Iframe can only work if AppBridge state was previously set in SessionStorage");
   }
