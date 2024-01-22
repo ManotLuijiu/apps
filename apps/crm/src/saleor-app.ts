@@ -3,10 +3,13 @@ import { SaleorApp } from "@saleor/app-sdk/saleor-app";
 
 const aplType = process.env.APL ?? "file";
 
+console.log("aplType", aplType);
+
 export let apl: APL;
 
 switch (aplType) {
   case "upstash":
+    console.log("upstash selected");
     apl = new UpstashAPL();
 
     break;

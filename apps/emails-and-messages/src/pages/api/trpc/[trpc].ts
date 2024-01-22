@@ -5,6 +5,8 @@ import { createLogger } from "@saleor/apps-shared";
 
 const logger = createLogger({ name: "tRPC error" });
 
+console.log("appRouter", appRouter);
+
 export default trpcNext.createNextApiHandler({
   router: appRouter,
   createContext: createTrpcContext,

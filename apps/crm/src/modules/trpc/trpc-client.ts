@@ -5,6 +5,8 @@ import { SALEOR_API_URL_HEADER, SALEOR_AUTHORIZATION_BEARER_HEADER } from "@sale
 import { appBridgeInstance } from "../../pages/_app";
 import { AppRouter } from "./trpc-app-router";
 
+console.log("appBridgeInstance", appBridgeInstance);
+
 function getBaseUrl() {
   if (typeof window !== "undefined") return "";
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;

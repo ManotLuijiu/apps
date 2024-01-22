@@ -36,6 +36,8 @@ export const AppBridgePersistence = {
 export const AppBridgeStorageSetter = () => {
   const { appBridgeState } = useAppBridge();
 
+  console.log("appBridgeState", appBridgeState);
+
   useEffect(() => {
     if (appBridgeState?.saleorApiUrl && appBridgeState?.token) {
       AppBridgePersistence.set({

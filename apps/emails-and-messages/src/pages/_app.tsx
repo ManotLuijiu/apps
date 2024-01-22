@@ -22,6 +22,7 @@ export const appBridgeInstance =
       })
     : undefined;
 
+console.log("appBridgeInstance_email_app.tsx", appBridgeInstance);
 function NextApp({ Component, pageProps }: AppProps) {
   return (
     <NoSSRWrapper>

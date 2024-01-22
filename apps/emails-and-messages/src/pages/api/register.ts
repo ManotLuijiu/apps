@@ -40,13 +40,15 @@ export default createAppRegisterHandler({
         token: token,
       });
 
+      console.log("register_email_client", client);
+
       saleorVersion = await fetchSaleorVersion(client);
     } catch (e: unknown) {
       const message = (e as Error)?.message ?? "Unknown error";
 
       logger.debug(
         { message, saleorApiUrl },
-        "Error during fetching saleor version in onRequestVerified handler"
+        "Error during fetching saleor version in onRequestVerified handler",
       );
 
       throw respondWithError({
@@ -64,7 +66,7 @@ export default createAppRegisterHandler({
     }
 
     const isVersionValid = new SaleorVersionCompatibilityValidator(REQUIRED_SALEOR_VERSION).isValid(
-      saleorVersion
+      saleorVersion,
     );
 
     if (!isVersionValid) {
