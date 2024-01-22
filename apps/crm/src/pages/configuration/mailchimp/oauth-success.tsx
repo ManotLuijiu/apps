@@ -13,6 +13,8 @@ const MailchimpOauthSuccessPage: NextPageWithLayoutOverwrite = () => {
     if (token) {
       const payload = { type: "mailchimp_token", token, dc };
 
+      console.log("payload", payload);
+
       window.parent.postMessage(payload, window.location.origin);
     }
   }, [token, dc]);

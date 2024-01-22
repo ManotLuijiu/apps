@@ -8,6 +8,7 @@ const IndexPage: NextPage = () => {
   const { appBridgeState, appBridge } = useAppBridge();
 
   console.log("appBridgeState_index", appBridgeState);
+  console.log("appBridgeState_index_ready", appBridgeState?.ready);
   console.log("appBridge_index", appBridge);
   const { replace } = useRouter();
 
