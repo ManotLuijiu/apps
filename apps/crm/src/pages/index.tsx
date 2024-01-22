@@ -7,8 +7,8 @@ import { useRouter } from "next/router";
 const IndexPage: NextPage = () => {
   const { appBridgeState, appBridge } = useAppBridge();
 
-  console.log("appBridgeState", appBridgeState);
-  console.log("appBridge", appBridge);
+  console.log("appBridgeState_index", appBridgeState);
+  console.log("appBridge_index", appBridge);
   const { replace } = useRouter();
 
   useEffect(() => {

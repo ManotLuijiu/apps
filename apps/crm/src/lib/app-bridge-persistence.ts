@@ -8,6 +8,8 @@ export type AppBridgeStorageState = {
 
 const storageKey = "app-bridge-state";
 
+console.log("storageKey", storageKey);
+
 /**
  * Saves token and API url to pass them to the iframe
  */
