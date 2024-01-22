@@ -115,6 +115,8 @@ function Instructions() {
 
   const slackUrl = new URL("https://api.slack.com/apps");
 
+  console.log("slackUrl", slackUrl);
+
   slackUrl.searchParams.append("new_app", "1");
   slackUrl.searchParams.append("manifest_json", JSON.stringify(data));
 
@@ -128,6 +130,8 @@ function Instructions() {
       },
     });
   };
+
+  console.log("openExternalUrl", openExternalUrl);
 
   return (
     <>

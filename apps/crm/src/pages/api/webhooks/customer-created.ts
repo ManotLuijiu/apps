@@ -21,7 +21,7 @@ export const customerCreatedWebhook = new SaleorAsyncWebhook<CustomerCreatedPayl
 export const customerCreatedHandler: NextWebhookApiHandler<CustomerCreatedPayloadFragment> = async (
   req,
   res,
-  context
+  context,
 ) => {
   const logger = createLogger({
     webhook: customerCreatedWebhook.name,
@@ -30,6 +30,9 @@ export const customerCreatedHandler: NextWebhookApiHandler<CustomerCreatedPayloa
   logger.debug("Webhook received");
 
   const { payload, authData } = context;
+
+  console.log("payload", payload);
+  console.log("authData", authData);
 
   const { user } = payload;
 
@@ -43,6 +46,8 @@ export const customerCreatedHandler: NextWebhookApiHandler<CustomerCreatedPayloa
     saleorApiUrl: authData.saleorApiUrl,
     token: authData.token,
   });
+
+  console.log("customer-created_client", client);
 
   const settingsManager = new MailchimpConfigSettingsManager(client, authData.appId);
 
