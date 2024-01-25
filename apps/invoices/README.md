@@ -18,7 +18,7 @@
 
 ## Development
 
-### Requirements
+### Requirements before installed
 
 Before you start, make sure you have installed:
 
@@ -36,13 +36,13 @@ The easiest way to set up a Saleor app is by using the Saleor CLI.
 
 If you don't have a (free developer) Saleor Cloud account, create one with the following command:
 
-```
+```bash
 saleor register
 ```
 
 Now you're ready to create your first App:
 
-```
+```bash
 saleor app create [your-app-name]
 ```
 
@@ -56,7 +56,7 @@ In this step, Saleor CLI will:
 
 Having your app ready, the final thing you want to establish is a tunnel with your Saleor environment. Go to your app's directory first and run:
 
-```
+```bash
 saleor app tunnel
 ```
 
@@ -64,32 +64,32 @@ Your local application should be available now to the outside world (Saleor inst
 
 A quick note: the next time you come back to your project, it is enough to launch your app in a standard way (and then launch your tunnel as described earlier):
 
-```
+```bash
 pnpm dev
 ```
 
 ### Without CLI
 
-1. Install the dependencies by running:
+1\. Install the dependencies by running:
 
-```
+```bash
 pnpm install
 ```
 
-2. Start the local server with:
+2\. Start the local server with:
 
-```
+```bash
 pnpm dev
 ```
 
-3. Expose local environment using tunnel:
-   Use tunneling tools like [localtunnel](https://github.com/localtunnel/localtunnel) or [ngrok](https://ngrok.com/).
+3\. Expose local environment using tunnel:
+Use tunneling tools like [localtunnel](https://github.com/localtunnel/localtunnel) or [ngrok](https://ngrok.com/).
 
-4. Install aplication at your dashboard:
+4\. Install application at your dashboard:
 
 If you use Saleor Cloud or your local server is exposed, you can install your app by following this link:
 
-```
+```bash
 [YOUR_SALEOR_DASHBOARD_URL]/apps/install?manifestUrl=[YOUR_APP_TUNNEL_MANIFEST_URL]
 ```
 
@@ -114,3 +114,5 @@ The choice of the APL is done using `APL` environment variable. If value is not 
 - `upstash`: use [Upstash](https://upstash.com/) Redis as storage method. Free account required. Can be used for development and production and supports multi-tenancy. Requires `UPSTASH_URL` and `UPSTASH_TOKEN` environment variables to be set
 
 If you want to use your own database, you can implement your own APL. [Check the documentation to read more.](https://github.com/saleor/saleor-app-sdk/blob/main/docs/apl.md)
+
+[![Seed Status](https://api.seed.run/esthete/saleor-invoices/stages/prod/build_badge)](https://console.seed.run/esthete/saleor-invoices)

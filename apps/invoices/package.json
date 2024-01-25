@@ -3,7 +3,7 @@
   "version": "1.17.3",
   "scripts": {
     "build": "pnpm generate && next build",
-    "dev": "sst bind next dev",
+    "dev": "pnpm generate && sst bind next dev",
     "fetch-schema": "curl https://raw.githubusercontent.com/saleor/saleor/${npm_package_saleor_schemaVersion}/saleor/graphql/schema.graphql > graphql/schema.graphql",
     "generate": "graphql-codegen",
     "lint": "next lint",

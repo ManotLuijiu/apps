@@ -62,6 +62,7 @@ In the `apps` folder, you will find the following applications:
 #### Other official apps
 
 Some of the Saleor apps are available in separate repositories:
+
 - [Stripe](https://github.com/saleor/saleor-app-payment-stripe)
 
 ## Development
