@@ -3,7 +3,7 @@
   "version": "1.17.3",
   "scripts": {
     "build": "pnpm generate && next build",
-    "dev": "pnpm generate && NODE_OPTIONS='--inspect' next dev",
+    "dev": "sst bind next dev",
     "fetch-schema": "curl https://raw.githubusercontent.com/saleor/saleor/${npm_package_saleor_schemaVersion}/saleor/graphql/schema.graphql > graphql/schema.graphql",
     "generate": "graphql-codegen",
     "lint": "next lint",
@@ -54,10 +54,13 @@
     "@types/react-dom": "18.2.5",
     "@types/rimraf": "^3.0.2",
     "@vitejs/plugin-react": "4.0.4",
+    "aws-cdk-lib": "2.110.1",
+    "constructs": "10.3.0",
     "dotenv": "^16.3.1",
     "eslint-config-saleor": "workspace:*",
     "jsdom": "^20.0.3",
     "rimraf": "^3.0.2",
+    "sst": "^2.39.10",
     "typescript": "5.1.6",
     "vite": "4.4.8",
     "vitest": "0.34.1"

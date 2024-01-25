@@ -3,7 +3,7 @@
   "version": "1.8.3",
   "scripts": {
     "build": "pnpm generate && next build",
-    "dev": "pnpm generate && NODE_OPTIONS='--inspect' next dev",
+    "dev": "sst bind next dev",
     "fetch-schema": "curl https://raw.githubusercontent.com/saleor/saleor/${npm_package_saleor_schemaVersion}/saleor/graphql/schema.graphql > graphql/schema.graphql",
     "generate": "graphql-codegen",
     "lint": "next lint",
@@ -55,9 +55,12 @@
     "@types/mailchimp__mailchimp_marketing": "^3.0.7",
     "@types/react": "18.2.5",
     "@types/react-dom": "18.2.5",
+    "aws-cdk-lib": "2.110.1",
+    "constructs": "10.3.0",
     "eslint": "8.46.0",
     "eslint-config-saleor": "workspace:*",
     "node-mocks-http": "^1.12.2",
+    "sst": "^2.39.7",
     "typescript": "5.1.6"
   },
   "private": true,

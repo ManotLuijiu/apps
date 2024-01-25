@@ -1,3 +1,9 @@
 
 # Sentry Auth Token
 .sentryclirc
+
+# sst
+.sst
+
+# open-next
+.open-next
