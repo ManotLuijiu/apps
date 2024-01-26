@@ -56,6 +56,9 @@ const handler: NextApiHandler = async (req, res) => {
     redirect_uri: redirectUri,
   });
 
+  console.log("oauth_res", res);
+  console.log("oauth_res", "clicked");
+
   return res.redirect(`https://login.mailchimp.com/oauth2/authorize?${qs.toString()}`);
 };
 
