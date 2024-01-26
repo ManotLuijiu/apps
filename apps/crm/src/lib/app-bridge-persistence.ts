@@ -20,6 +20,8 @@ export const AppBridgePersistence = {
   get(): AppBridgeStorageState | null {
     const storageItem = window.sessionStorage.getItem(storageKey);
 
+    console.log("storageItem", storageItem);
+
     if (!storageItem) {
       return null;
     }

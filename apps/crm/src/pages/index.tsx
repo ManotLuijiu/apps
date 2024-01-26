@@ -16,7 +16,7 @@ const IndexPage: NextPage = () => {
     if (appBridgeState?.ready) {
       replace("/configuration/providers/mailchimp");
     }
-  }, [appBridgeState, appBridge]);
+  }, [appBridgeState, appBridge, replace]);
 
   return <p>Loading...</p>;
 };

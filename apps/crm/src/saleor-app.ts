@@ -10,7 +10,12 @@ export let apl: APL;
 switch (aplType) {
   case "upstash":
     console.log("upstash selected");
-    apl = new UpstashAPL();
+    // apl = new UpstashAPL();
+    apl = new UpstashAPL({
+      restToken:
+        "AbqaASQgY2U4ODA4YzAtMzc5Yi00MmY0LWJlNTktMGJiZTRjZTg2YWU0Y2Q3YjJjMTc2OTM2NDEwMmFmZjA2NjdiMjQzMGJmMjk=",
+      restURL: "https://communal-gator-47770.kv.vercel-storage.com",
+    });
 
     break;
   case "file":
