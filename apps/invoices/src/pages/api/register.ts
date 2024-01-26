@@ -11,6 +11,8 @@ import {
 
 const allowedUrlsPattern = process.env.ALLOWED_DOMAIN_PATTERN;
 
+console.log("allowedUrlsPattern", allowedUrlsPattern);
+
 const SaleorVersion = gql`
   query SaleorVersion {
     shop {
@@ -53,6 +55,8 @@ export default createAppRegisterHandler({
       context: "onRequestVerified",
     });
 
+    console.log("saleorApiUrl", saleorApiUrl);
+
     try {
       const client = createGraphQLClient({
         saleorApiUrl: saleorApiUrl,
@@ -73,7 +77,7 @@ export default createAppRegisterHandler({
       }
 
       new SaleorVersionCompatibilityValidator(REQUIRED_SALEOR_VERSION).validateOrThrow(
-        saleorVersion
+        saleorVersion,
       );
     } catch (e: unknown) {
       const message = (e as Error)?.message ?? "Unknown error";

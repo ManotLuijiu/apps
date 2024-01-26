@@ -32,6 +32,8 @@ const handler: NextApiHandler = async (req, res) => {
 
   const { access_token } = await tokenResponse.json();
 
+  console.log("access_token", access_token);
+
   logger.debug({ access_token }, "Received mailchimp access_token");
 
   const metadataResponse = await fetch("https://login.mailchimp.com/oauth2/metadata", {
@@ -45,6 +47,8 @@ const handler: NextApiHandler = async (req, res) => {
   const mc = new MailchimpClientOAuth(metadata.dc, access_token);
 
   await mc.ping();
+
+  console.log("res", res);
 
   return res.redirect(
     `/configuration/mailchimp/oauth-success?token=${access_token}&email=${metadata.login.email}&dc=${metadata.dc}`,
