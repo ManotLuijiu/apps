@@ -17,7 +17,10 @@ console.log("process.env.UPSTASH_TOKEN", process.env.UPSTASH_TOKEN);
 
 switch (process.env.APL) {
   case "upstash":
-    // Require `UPSTASH_URL` and `UPSTASH_TOKEN` environment variables
+    /*
+     * Require `UPSTASH_URL` and `UPSTASH_TOKEN` environment variables
+     * Using Github login to upstash
+     */
     apl = new UpstashAPL({
       // restToken: process.env.UPSTASH_TOKEN as string,
       restToken:

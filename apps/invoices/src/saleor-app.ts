@@ -7,7 +7,13 @@ let apl: APL;
 
 switch (aplType) {
   case "upstash":
-    apl = new UpstashAPL();
+    // apl = new UpstashAPL();
+    apl = new UpstashAPL({
+      // Vercel
+      restToken:
+        "AXhdASQgYjhjNzAxZDEtMDAxNi00NTQ2LWE0ZTEtOGFjNGIzMWViMTIwZWExMjBjNjJkM2I2NDM1Y2EyMTlmMjM2YzAwNjg3ZGM=",
+      restURL: "https://smooth-boar-30813.upstash.io",
+    });
 
     break;
   case "file":
