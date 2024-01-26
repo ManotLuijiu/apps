@@ -12,9 +12,10 @@ switch (aplType) {
     console.log("upstash selected");
     // apl = new UpstashAPL();
     apl = new UpstashAPL({
+      // upstash admin@iesthete.com
       restToken:
-        "AbqaASQgY2U4ODA4YzAtMzc5Yi00MmY0LWJlNTktMGJiZTRjZTg2YWU0Y2Q3YjJjMTc2OTM2NDEwMmFmZjA2NjdiMjQzMGJmMjk=",
-      restURL: "https://communal-gator-47770.kv.vercel-storage.com",
+        "AYcuASQgYzRjNWM3NjUtODY5Ni00YmZmLWJkNWUtMWNlMDM4MzMyODRiMmI0MDM0NDVlN2EyNDUwNmFiZDZiOTlmM2RhN2Y3NTg=",
+      restURL: "https://apn1-set-opossum-34606.upstash.io",
     });
 
     break;
