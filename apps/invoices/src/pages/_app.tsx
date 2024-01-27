@@ -20,6 +20,8 @@ export let appBridgeInstance: AppBridge | undefined;
 
 if (typeof window !== "undefined" && !appBridgeInstance) {
   appBridgeInstance = new AppBridge();
+
+  console.log("appBridgeInstance", appBridgeInstance);
 }
 
 /**

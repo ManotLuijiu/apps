@@ -8,14 +8,20 @@ import { Box, Text } from "@saleor/macaw-ui";
 
 const IndexPage: NextPage = () => {
   const { appBridgeState } = useAppBridge();
+
+  console.log("appBridgeState", appBridgeState);
+
   const isMounted = useIsMounted();
+
+  console.log("isMounted", isMounted);
+
   const { replace } = useRouter();
 
   useEffect(() => {
     if (isMounted() && appBridgeState?.ready) {
       replace("/configuration");
     }
-  }, [isMounted, appBridgeState?.ready]);
+  }, [isMounted, appBridgeState?.ready, replace]);
 
   if (isInIframe()) {
     return null;

@@ -3,6 +3,8 @@ import { SaleorApp } from "@saleor/app-sdk/saleor-app";
 
 const aplType = process.env.APL ?? "file";
 
+console.log("aplType", aplType);
+
 let apl: APL;
 
 switch (aplType) {

@@ -7,6 +7,8 @@ import { Layout } from "@saleor/apps-ui";
 export const AppConfigView = () => {
   const { appBridge } = useAppBridge();
 
+  console.log("app-config_appBridge", appBridge);
+
   return (
     <Box>
       <Text as={"h1"} variant={"hero"} marginBottom={5}>

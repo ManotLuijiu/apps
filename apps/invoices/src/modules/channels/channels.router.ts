@@ -6,6 +6,7 @@ import { createGraphQLClient } from "@saleor/apps-shared";
 
 export const channelsRouter = router({
   fetch: protectedClientProcedure.query(async ({ ctx, input }): Promise<ChannelFragment[]> => {
+    console.log("channels.router_ctx", ctx);
     const client = createGraphQLClient({
       saleorApiUrl: ctx.saleorApiUrl,
       token: ctx.token,
