@@ -8,6 +8,8 @@ import { REQUIRED_SALEOR_VERSION } from "../../saleor-app";
 export default createManifestHandler({
   async manifestFactory({ appBaseUrl }) {
     const iframeBaseUrl = process.env.APP_IFRAME_BASE_URL ?? appBaseUrl;
+
+    console.log("iframeBaseUrl", iframeBaseUrl);
     const apiBaseURL = process.env.APP_API_BASE_URL ?? appBaseUrl;
 
     const manifest: AppManifest = {

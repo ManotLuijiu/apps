@@ -19,6 +19,8 @@ const attachAppToken = middleware(async ({ ctx, next }) => {
 
   const authData = await saleorApp.apl.get(ctx.saleorApiUrl);
 
+  console.log("authData", authData);
+
   if (!authData) {
     logger.debug("authData not found, throwing 401");
 
@@ -42,7 +44,7 @@ const validateClientToken = middleware(async ({ ctx, next, meta }) => {
     {
       permissions: meta?.requiredClientPermissions,
     },
-    "Calling validateClientToken middleware with permissions required"
+    "Calling validateClientToken middleware with permissions required",
   );
 
   if (!ctx.token) {
