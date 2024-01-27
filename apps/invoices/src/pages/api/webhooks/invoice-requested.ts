@@ -29,6 +29,8 @@ import { shopInfoQueryToAddressShape } from "../../../modules/shop-info/shop-inf
 import * as Sentry from "@sentry/nextjs";
 import { AppConfigV2 } from "../../../modules/app-configuration/schema-v2/app-config";
 
+console.log("saleorApp", saleorApp);
+
 const OrderPayload = gql`
   fragment Address on Address {
     id
@@ -156,7 +158,7 @@ const invoiceNumberGenerator = new InvoiceNumberGenerator();
 export const handler: NextWebhookApiHandler<InvoiceRequestedPayloadFragment> = async (
   req,
   res,
-  context
+  context,
 ) => {
   const { authData, payload, baseUrl } = context;
   const logger = createLogger({ domain: authData.saleorApiUrl, url: baseUrl });
@@ -176,7 +178,7 @@ export const handler: NextWebhookApiHandler<InvoiceRequestedPayloadFragment> = a
    */
   const invoiceName = invoiceNumberGenerator.generateFromOrder(
     order as OrderPayloadFragment,
-    InvoiceNumberGenerationStrategy.localizedDate("en-US") // todo connect locale -> where from?
+    InvoiceNumberGenerationStrategy.localizedDate("en-US"), // todo connect locale -> where from?
   );
 
   Sentry.addBreadcrumb({
@@ -270,7 +272,7 @@ export const handler: NextWebhookApiHandler<InvoiceRequestedPayloadFragment> = a
     await new InvoiceCreateNotifier(client).notifyInvoiceCreated(
       orderId,
       invoiceName,
-      uploadedFileUrl
+      uploadedFileUrl,
     );
 
     Sentry.addBreadcrumb({

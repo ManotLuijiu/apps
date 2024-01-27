@@ -5,11 +5,11 @@ import packageJson from "../../../package.json";
 import { invoiceRequestedWebhook } from "./webhooks/invoice-requested";
 import { REQUIRED_SALEOR_VERSION } from "../../saleor-app";
 
+console.log("invoiceRequestedWebhook", invoiceRequestedWebhook);
+
 export default createManifestHandler({
   async manifestFactory({ appBaseUrl }) {
     const iframeBaseUrl = process.env.APP_IFRAME_BASE_URL ?? appBaseUrl;
-
-    console.log("iframeBaseUrl", iframeBaseUrl);
     const apiBaseURL = process.env.APP_API_BASE_URL ?? appBaseUrl;
 
     const manifest: AppManifest = {
@@ -38,6 +38,7 @@ export default createManifestHandler({
       },
     };
 
+    console.log(manifest);
     return manifest;
   },
 });
