@@ -18,6 +18,7 @@ export const useFetchAllCustomers = (enabled: boolean) => {
   const [totalCustomersCount, setTotalCustomersCount] = useState<number | null>(null);
   const [done, setDone] = useState(false);
 
+  console.log("use-fetch-all-customers_appBridgeState", appBridgeState);
   console.log("use-fetch-all-customers", customers);
   console.log("use-fetch-all-customers", totalCustomersCount);
 
@@ -34,6 +35,8 @@ export const useFetchAllCustomers = (enabled: boolean) => {
       saleorApiUrl: appBridgeState.saleorApiUrl,
       token: appBridgeState.token,
     });
+
+    console.log("client", client);
 
     const fetchPage = (cursor?: string) =>
       client.query(FetchCustomersDocument, { cursor }).toPromise();
