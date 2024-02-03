@@ -112,6 +112,13 @@ export const WebhookConfiguration = (props: ComponentProps<typeof Box>) => {
         <Checkbox onChange={handleCheckboxChange} checked={localState.selected}>
           <Text marginRight="auto">Enable customers sync</Text>
         </Checkbox>
+        <input
+          type="checkbox"
+          id="esthete__checkbox"
+          name="esthete_checkbox"
+          onChange={handleCheckboxChange}
+          checked={localState.selected}
+        />
         <Box display="flex" alignItems="center">
           <Text
             color={localState?.selected ? "textNeutralDefault" : "textNeutralDisabled"}
