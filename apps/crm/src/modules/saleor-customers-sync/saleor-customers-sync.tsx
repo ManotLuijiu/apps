@@ -29,11 +29,13 @@ export const SaleorCustomersSync = (props: ComponentProps<typeof Box>) => {
   const [selectedList, setSelectedList] = useState<null | string>(null);
 
   console.log("saleor-customers-sync_customers_enabled", enabled);
-  console.log("saleor-customers-sync_customers", customers);
-  console.log("saleor-customers-sync_customers", selectedList);
+  console.log("saleor-customers-sync_customers_customers", customers);
+  console.log("saleor-customers-sync_customers_totalCustomersCount", totalCustomersCount);
+  console.log("saleor-customers-sync_customers_selectedList", selectedList);
 
   useEffect(() => {
     if (done) {
+      console.log("done", done);
       mutateAsync({
         listId: selectedList!,
         contacts: customers,
@@ -93,7 +95,8 @@ export const SaleorCustomersSync = (props: ComponentProps<typeof Box>) => {
 
   return (
     <RootSection {...props}>
-      {totalCustomersCount && (
+      Hi, Manot.
+      {/* {totalCustomersCount && (
         <Box display="flex" gap={1.5} alignItems="center" marginBottom={5}>
           <progress
             style={{
@@ -113,7 +116,7 @@ export const SaleorCustomersSync = (props: ComponentProps<typeof Box>) => {
           </Text>
           {status === "loading" && <Text as="p">Sending customer to Mailchimp in progress...</Text>}
         </Box>
-      )}
+      )} */}
     </RootSection>
   );
 };
