@@ -6,6 +6,7 @@ import { appBridgeInstance } from "../../pages/_app";
 import { AppRouter } from "./trpc-app-router";
 
 // console.log("appBridgeInstance", appBridgeInstance);
+console.log("process.env.VERCEL_URL", process.env.VERCEL_URL);
 
 function getBaseUrl() {
   if (typeof window !== "undefined") return "";

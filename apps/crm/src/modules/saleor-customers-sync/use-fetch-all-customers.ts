@@ -19,6 +19,7 @@ export const useFetchAllCustomers = (enabled: boolean) => {
   const [done, setDone] = useState(false);
 
   console.log("use-fetch-all-customers", customers);
+  console.log("use-fetch-all-customers", totalCustomersCount);
 
   if (!appBridgeState) {
     throw new Error("Must be used withing AppBridgeProvider");
@@ -43,6 +44,8 @@ export const useFetchAllCustomers = (enabled: boolean) => {
 
       while (!allFetched) {
         const results: OperationResult<FetchCustomersQuery> = await fetchPage(lastCursor);
+
+        console.log("use-fetch-all-customers_results", results);
 
         if (!results.data) {
           return;

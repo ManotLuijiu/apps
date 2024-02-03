@@ -28,6 +28,8 @@ export const SaleorCustomersSync = (props: ComponentProps<typeof Box>) => {
   const { notifySuccess } = useDashboardNotification();
   const [selectedList, setSelectedList] = useState<null | string>(null);
 
+  console.log("saleor-customers-sync_customers", customers);
+
   useEffect(() => {
     if (done) {
       mutateAsync({
