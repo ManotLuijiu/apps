@@ -41,6 +41,8 @@ export const WebhookConfiguration = (props: ComponentProps<typeof Box>) => {
 
   const [localState, setLocalState] = useState<LocalState>(null);
 
+  console.log("localState", localState);
+
   useEffect(() => {
     if (
       !(
@@ -70,6 +72,7 @@ export const WebhookConfiguration = (props: ComponentProps<typeof Box>) => {
   }
 
   const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log("handleCheckboxChange", e);
     e.target.checked
       ? setLocalState({
           selected: true,
@@ -90,7 +93,7 @@ export const WebhookConfiguration = (props: ComponentProps<typeof Box>) => {
             }
           : {
               enabled: false,
-            }
+            },
       )
       .then(() => {
         notifySuccess("Success", "Config Saved");
