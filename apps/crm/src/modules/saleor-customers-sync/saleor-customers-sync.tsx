@@ -28,7 +28,9 @@ export const SaleorCustomersSync = (props: ComponentProps<typeof Box>) => {
   const { notifySuccess } = useDashboardNotification();
   const [selectedList, setSelectedList] = useState<null | string>(null);
 
+  console.log("saleor-customers-sync_customers_enabled", enabled);
   console.log("saleor-customers-sync_customers", customers);
+  console.log("saleor-customers-sync_customers", selectedList);
 
   useEffect(() => {
     if (done) {
@@ -39,7 +41,7 @@ export const SaleorCustomersSync = (props: ComponentProps<typeof Box>) => {
         notifySuccess("Sync successful", "Contacts sent to Mailchimp");
       });
     }
-  }, [customers, done, mutateAsync, notifySuccess, selectedList]);
+  }, [done]);
 
   if (!enabled) {
     return (
@@ -55,7 +57,14 @@ export const SaleorCustomersSync = (props: ComponentProps<typeof Box>) => {
               setSelectedList(value);
             }}
           />
-          <Button marginLeft={"auto"} disabled={!selectedList} onClick={() => setEnabled(true)}>
+          <Button
+            marginLeft={"auto"}
+            disabled={!selectedList}
+            onClick={() => {
+              console.log("clicked");
+              setEnabled(true);
+            }}
+          >
             Start
           </Button>
         </Box>
