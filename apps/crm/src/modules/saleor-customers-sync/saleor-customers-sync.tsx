@@ -37,7 +37,7 @@ export const SaleorCustomersSync = (props: ComponentProps<typeof Box>) => {
         notifySuccess("Sync successful", "Contacts sent to Mailchimp");
       });
     }
-  }, [done]);
+  }, [customers, done, mutateAsync, notifySuccess, selectedList]);
 
   if (!enabled) {
     return (

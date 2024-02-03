@@ -18,6 +18,8 @@ export const useFetchAllCustomers = (enabled: boolean) => {
   const [totalCustomersCount, setTotalCustomersCount] = useState<number | null>(null);
   const [done, setDone] = useState(false);
 
+  console.log("use-fetch-all-customers", customers);
+
   if (!appBridgeState) {
     throw new Error("Must be used withing AppBridgeProvider");
   }
